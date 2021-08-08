@@ -5,16 +5,22 @@ const { Post, Tenant, Properties, Landlord } = require('../models');
 
 router.get('/properties', (req, res) => {
    Properties.findAll({
-      attributes: [
-         'id',
-         '',
-         'title',
-         'created_at',
-         // [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = rating.post_id)'), 'rating_count']
-      ],
-   })
-   console.log('YAY');
-   res.render('property-page');
+      // attributes: [
+      //    'id',
+      //    'location_address',
+      //    'number_of_bedrooms',
+      //    'number_of_bathrooms',
+      //    'property_type',
+      //    'created_at',
+      //    // [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = rating.post_id)'), 'rating_count']
+      // ],
+   }).then(dbPostData => {
+      const properties = dbPostData.map(properties => properties.get({ plain: true }));
+      console.log(properties);
+      res.render('property-page', {
+         properties,
+      });
+   });
 });
 
 // router.get('/', (req, res) => {

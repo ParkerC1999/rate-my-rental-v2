@@ -3,14 +3,6 @@ const propBtn = document.querySelector('.propBtn')
 async function newPropSearch() {
 
    const response = await fetch(`/api/properties`, {
-      // method: 'GET',
-      // body: JSON.stringify({
-         
-         
-      // }),
-      // headers: {
-      //    'Content-Type': 'application/json'
-      // }
    });
    console.log(response);
    if (response.ok) {
