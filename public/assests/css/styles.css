@@ -1,0 +1,151 @@
+:root {
+   --main-color: rgb(34, 42, 67);
+   --secondary-color: rgb(249, 250, 136);
+   --third-color: rgb(228, 140, 75);
+   --fourth-color: #01fe87;
+   --menu-speed: 0.75s;
+}
+
+main {
+   font-family: 'Londrina Shadow', cursive;
+}
+
+.landing {
+   min-height: 100vh;
+   background-image: url(https://source.unsplash.com/2d4lAQAlbDA/2000x1300);
+   background-size: cover;
+}
+
+/* Intro Loading Styles */
+
+.intro {
+   background-color: black;
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.intro-text {
+   font-size: 10rem;
+   color: var(--secondary-color);
+   font-family: 'Permanent Marker', cursive;
+}
+
+.intro-detail {
+   color: var(--third-color);
+}
+
+.slider {
+   background-color: var(--third-color);
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   transform: translateX(100%);
+}
+
+.hide {
+   background: black;
+   overflow: hidden;
+}
+
+.hide span {
+   transform: translateY(100%);
+   display: inline-block;
+}
+
+/* End of Intro Loading Screen */
+
+/* Hamburger Styles */
+
+nav {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.nav-links {
+   display: flex;
+   list-style: none;
+   color: var(--main-color);
+}
+
+.nav-links li {
+   padding-left: 10rem;
+   font-size: 1.2rem;
+}
+
+.resume {
+   border: solid;
+}
+
+/* End of Hamburger Styles */
+
+/* Ttile */
+
+.big-text {
+   position: absolute;
+   height: 50px;
+   top: 30%;
+   left: 50%;
+   transform: translate(-50%, -30%);
+   font-size: 8rem;
+   font-family: 'Cabin Sketch', cursive;
+   color: var(--main-color);
+}
+
+.big-text2 {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -30%);
+   font-size: 3rem;
+   font-family: 'Cabin Sketch', cursive;
+   color: var(--secondary-color);
+}
+
+/* End of Title */
+
+.button1 {
+   justify-content: center;
+   flex-wrap: wrap;
+   margin-top: 50px;
+   border-radius: 4%;
+   border: solid;
+   border-color: var(--main-color);
+   font-size: 3rem;
+   background-color: transparent;
+}
+
+.search {
+   width: 1000px;
+   margin-left: 100px;
+   margin-top: 20px;
+}
+
+.button1 input {
+   background-color: rgba(0, 0, 0, 0);
+   border-radius: 5px;
+}
+
+.button1 input:focus:focus {
+   background-color: var(--third-color);
+   outline: none;
+}
+
+.button1 {
+   background-color: var(--main-color);
+   border: none;
+   color: white;
+   text-align: center;
+}
+
+.button1:hover {
+   background-color: var(--third-color);
+}

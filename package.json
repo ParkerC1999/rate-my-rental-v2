@@ -1,0 +1,30 @@
+{
+  "name": "rate-my-rental-v2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ParkerC1999/rate-my-rental-v2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ParkerC1999/rate-my-rental-v2/issues"
+  },
+  "homepage": "https://github.com/ParkerC1999/rate-my-rental-v2#readme",
+  "dependencies": {
+    "express-handlebars": "^5.3.3",
+    "bcrypt": "^5.0.1",
+    "connect-session-sequelize": "^7.1.1",
+    "css-star-rating": "^1.2.4",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-session": "^1.17.2",
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.6.5"
+  }
+}
