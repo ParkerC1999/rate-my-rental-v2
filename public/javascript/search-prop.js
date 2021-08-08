@@ -19,5 +19,5 @@ async function newPropSearch(event) {
    }
 }
 
-document.querySelector('.propBtn').addEventListener('click', newPropSearch);
+document.getElementsByClassName('.propBtn').addEventListener('click', newPropSearch);
 console.log(newPropSearch)

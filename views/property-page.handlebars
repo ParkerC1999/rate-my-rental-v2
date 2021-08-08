@@ -1,0 +1,16 @@
+<form class="search-button">
+   <input type="text" placeholder="Property Address" name="search">
+   <button class="propSearchBtn" type="submit">Search</button>
+</form>
+
+<section>
+   <ol>
+      {{#each properties}}
+      <li>
+         {{> property-info}}
+         {{!-- {{MOST RECENT COMMENT}} --}}
+         {{!-- {{> comment}} --}}
+      </li>
+      {{/each}}
+   </ol>
+</section>
