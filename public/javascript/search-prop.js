@@ -1,17 +1,18 @@
-async function newPropSearch(event) {
-   event.preventDefault();
+const propBtn = document.querySelector('.propBtn')
+
+async function newPropSearch() {
 
    const response = await fetch(`/api/properties`, {
-      method: 'GET',
-      body: JSON.stringify({
+      // method: 'GET',
+      // body: JSON.stringify({
          
          
-      }),
-      headers: {
-         'Content-Type': 'application/json'
-      }
+      // }),
+      // headers: {
+      //    'Content-Type': 'application/json'
+      // }
    });
-
+   console.log(response);
    if (response.ok) {
       document.location.replace('/properties');
    } else {
@@ -19,5 +20,7 @@ async function newPropSearch(event) {
    }
 }
 
-document.getElementsByClassName('.propBtn').addEventListener('click', newPropSearch);
-console.log(newPropSearch)
+propBtn.addEventListener('click', function() {
+   console.log('Click');
+   newPropSearch();
+});

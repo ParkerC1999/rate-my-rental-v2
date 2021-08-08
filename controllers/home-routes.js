@@ -1,6 +1,21 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const { Post, Tenant, Comment, Rating, Landlord } = require('../models');
+const { Post, Tenant, Properties, Landlord } = require('../models');
+
+
+router.get('/properties', (req, res) => {
+   Properties.findAll({
+      attributes: [
+         'id',
+         '',
+         'title',
+         'created_at',
+         // [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = rating.post_id)'), 'rating_count']
+      ],
+   })
+   console.log('YAY');
+   res.render('property-page');
+});
 
 // router.get('/', (req, res) => {
 //    console.log('======================');

@@ -39,7 +39,7 @@ router.post('/', (req, res) => {
       number_of_bathrooms: req.body.number_of_bathrooms,
       property_type: req.body.property_type,
       location_address: req.body.location_address,
-      landlord_id: req.body.landlord_id
+      // landlord_id: req.body.landlord_id
    })
       .then(dbPropertyData => {
          if (!dbPropertyData) {
@@ -54,43 +54,23 @@ router.post('/', (req, res) => {
       });
 });
 
-router.put('/', (req, res) => {
-   Properties.update(req.body, {
-      individualHooks: true,
-      where: {
-         id: req.params.id
-      }
-   })
-      .then(dbPropertyData => {
-         if (!dbPropertyData) {
-            res.status(404).json({ message: 'No property found with this id' });
-            return;
-         }
-         res.json(dbPropertyData);
-      })
-      .catch(err => {
-         console.log(err);
-         res.status(500).json(err);
-      });
-});
-
-router.delete('/:id', withAuth, (req, res) => {
-   Properties.destroy({
-      where: {
-         id: req.params.id
-      }
-   })
-      .then(dbPropertyData => {
-         if (!dbPropertyData) {
-            res.status(404).json({ message: 'No property found with this id' });
-            return;
-         }
-         res.json(dbPropertyData);
-      })
-      .catch(err => {
-         console.log(err);
-         res.status(500).json(err);
-      });
-});
+// router.delete('/:id', (req, res) => {
+//    Properties.destroy({
+//       where: {
+//          id: req.params.id
+//       }
+//    })
+//       .then(dbPropertyData => {
+//          if (!dbPropertyData) {
+//             res.status(404).json({ message: 'No property found with this id' });
+//             return;
+//          }
+//          res.json(dbPropertyData);
+//       })
+//       .catch(err => {
+//          console.log(err);
+//          res.status(500).json(err);
+//       });
+// });
 
 module.exports = router;
