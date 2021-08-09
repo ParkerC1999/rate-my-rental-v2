@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { Tenant, Comment, Post, Rating, Landlord } = require('../../models');
+const withAuth = require('../../utils/auth')
 
 router.get('/', (req, res) => {
    Tenant.findAll({
@@ -18,14 +19,6 @@ router.get('/:id', (req, res) => {
          id: req.params.id
       },
       attributes: { exclude: ['password'] },
-      // include: [
-      //     {
-      //         model: Post
-      //     },
-      //     {
-      //         model: Landlord
-      //     }
-      // ]
    })
       .then(dbTenantData => {
          if (!dbTenantData) {
@@ -63,7 +56,7 @@ router.post('/', (req, res) => {
 });
 
 // Login
-router.post('/login', (req, res) => {
+router.post('/login', withAuth, (req, res) => {
    Tenant.findOne({
       where: {
          email: req.body.email
@@ -92,7 +85,7 @@ router.post('/login', (req, res) => {
 });
 
 // Logout
-router.post('/logout', (req, res) => {
+router.post('/logout', withAuth, (req, res) => {
    if (req.session.loggedIn) {
       req.session.destroy(() => {
          res.status(204).end();
@@ -103,7 +96,7 @@ router.post('/logout', (req, res) => {
    }
 });
 
-router.put('/:id', (req, res) => {
+router.put('/:id', withAuth, (req, res) => {
    Tenant.update(req.body, {
       individualHooks: true,
       where: {
@@ -123,7 +116,7 @@ router.put('/:id', (req, res) => {
       });
 });
 
-router.delete('/:id', (req, res) => {
+router.delete('/:id', withAuth,(req, res) => {
    Tenant.destroy({
       where: {
          id: req.params.id
