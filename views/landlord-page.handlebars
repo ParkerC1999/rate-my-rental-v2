@@ -1,9 +1,21 @@
-<form class="search-button">
-   <input type="text" placeholder="Property Address" name="search">
-   <button class="propSearchBtn" type="submit">Search</button>
-</form>
-
 <section>
+ <div class="container-top">
+      <div class="row">
+         <div class="col">
+         </div>
+      </div>
+   </div>
+   <div class="container-fluid background-property">
+      <div class="row">
+         <div class="col">
+            <form class="search-button">
+               <input class="input1" type="text" placeholder="Landlord Name" name="search">
+               <button class="propSearchBtn" type="submit">Search</button>
+            </form>
+         </div>
+      </div>
+   </div>
+
    <ol>
       {{#each landlords}}
       <li>
@@ -14,3 +26,4 @@
       {{/each}}
    </ol>
 </section>
+
