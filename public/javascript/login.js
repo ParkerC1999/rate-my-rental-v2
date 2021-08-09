@@ -20,42 +20,12 @@ async function signupFormHandler(event) {
          headers: { 'Content-Type': 'application/json' }
       });
       if (response.ok) {
-         //alert('account created');
-         // check to make sure replace works
+
          document.location.replace('/');
       } else {
          alert(response.statusText);
-         // response.json().then(function (data) {
-         //    console.log(data);
-         //    switch (data[0].path) {
-         //       case 'password':
-         //          $('#password-req').append('<p>Password does not meet password strength criteria</p>').addClass('mt-1 mb-0 text-danger');
-         //          //alert ('Password validation failed');
-         //          break;
-         //       case 'username':
-         //          $('#username-div').append('<p>Username too short</p>').addClass('mt-1 mb-0 text-danger');
-         //          //alert ('Username too short');
-         //          break;
-         //       case 'email':
-         //          $('#email-div').append('<p>Not a valid email address</p>').addClass('mt-1 mb-0 text-danger');
-         //          //alert ('Not a valid email address');
-         //          break;
-         //       case 'user.username':
-         //          $('#username-div').append('<p>Not a unique username</p>').addClass('mt-1 mb-0 text-danger');
-         //          break;
-         //       case 'user.email':
-         //          $('#email-div').append('<p>Email already in use</p>').addClass('mt-1 mb-0 text-danger');
-         //          break;
-         //    }
-         // });
       }
-   } // else {
-
-   //    $('#password-req').append('<p>Please fill out all text fields before continuing.</p>').addClass('mt-1 mb-0 text-danger');
-   //    //alert('Please fill out all text fields before continuing.');
-
-   //    return;
-   // }
+   } 
 }
 
 var firstTry = true;
@@ -76,17 +46,9 @@ async function loginFormHandler(event) {
       });
 
       if (response.ok) {
-         // check to make sure replace works
          document.location.replace('/');
       } else {
          alert(response.statusText);
-         // if (response.status === 404 && firstTry === true) {
-         //    $('#password-div').append('<p>Invalid password or username</p>').addClass('mt-1 mb-0 text-danger');
-         //    firstTry = false;
-         // } else {
-         //    $('p').remove(":contains('Invalid password or username')");
-         //    $('#password-div').append('<p>Invalid password or username</p>').addClass('mt-1 mb-0 text-danger');
-         // }
       }
    }
 }
