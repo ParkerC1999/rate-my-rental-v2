@@ -37,9 +37,11 @@
                   <div>
                      <div>
                         <ul>
-                           <li> <a href="#">Tenant Login</a></li>
-                           <li> <a href="#">Landlord Login</a></li>
-                           <li> <a href="#">Create new account</a></li>
+                           {{#if loggedIn}}
+                           <li> <button id="logout">Logout</button></li>
+                           {{else}}
+                           <li> <a href="/login">Tenant Login</a></li>
+                           {{/if}}
                            <li> <a href="#">About</a></li>
                            <li> <a href="#">Contact</a></li>
                         </ul>
@@ -51,6 +53,9 @@
       {{{body}}}
    </main>
 
+   {{#if loggedIn}}
+   <script src="/javascript/logout.js"
+   {{/if}}
    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/gsap.min.js"
       integrity="sha512-2fk3Q4NXPYAqIha0glLZ2nluueK43aNoxvijPf53+DgL7UW9mkN+uXc1aEmnZdkkZVvtJZltpRt+JqTWc3TS3Q=="
       crossorigin="anonymous" referrerpolicy="no-referrer"></script>

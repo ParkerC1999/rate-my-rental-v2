@@ -67,46 +67,46 @@ router.post('/', (req, res) => {
       });
 });
 
-// // Login
-// router.post('/login', (req, res) => {
-//    Landlord.findOne({
-//       where: {
-//          email: req.body.email
-//       }
-//    }).then(dbLandLordData => {
-//       if (!dbLandLordData) {
-//          res.status(400).json({ message: 'No user with that email address!' });
-//          return;
-//       }
+// Login
+router.post('/login', (req, res) => {
+   Landlord.findOne({
+      where: {
+         email: req.body.email
+      }
+   }).then(dbLandLordData => {
+      if (!dbLandLordData) {
+         res.status(400).json({ message: 'No user with that email address!' });
+         return;
+      }
 
-//       const validPassword = dbLandLordData.checkPassword(req.body.password);
+      const validPassword = dbLandLordData.checkPassword(req.body.password);
 
-//       if (!validPassword) {
-//          res.status(400).json({ message: 'Incorrect password!' });
-//          return;
-//       }
+      if (!validPassword) {
+         res.status(400).json({ message: 'Incorrect password!' });
+         return;
+      }
 
-//       req.session.save(() => {
-//          req.session.landlord_id = dbLandLordData.id;
-//          req.session.username = dbLandLordData.username;
-//          req.session.loggedIn = true;
+      req.session.save(() => {
+         req.session.landlord_id = dbLandLordData.id;
+         req.session.username = dbLandLordData.username;
+         req.session.loggedIn = true;
 
-//          res.json({ landlord: dbLandLordData, message: 'You are now logged in!' });
-//       });
-//    });
-// });
+         res.json({ landlord: dbLandLordData, message: 'You are now logged in!' });
+      });
+   });
+});
 
-// // Logout
-// router.post('/logout', (req, res) => {
-//    if (req.session.loggedIn) {
-//       req.session.destroy(() => {
-//          res.status(204).end();
-//       });
-//    }
-//    else {
-//       res.status(404).end();
-//    }
-// });
+// Logout
+router.post('/logout', (req, res) => {
+   if (req.session.loggedIn) {
+      req.session.destroy(() => {
+         res.status(204).end();
+      });
+   }
+   else {
+      res.status(404).end();
+   }
+});
 
 // router.put('/:id', withAuth, (req, res) => {
 //    Landlord.update(req.body, {

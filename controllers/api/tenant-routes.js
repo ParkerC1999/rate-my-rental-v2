@@ -62,46 +62,46 @@ router.post('/', (req, res) => {
       });
 });
 
-// // Login
-// router.post('/login', (req, res) => {
-//     Tenant.findOne({
-//         where: {
-//             email: req.body.email
-//         }
-//     }).then(dbTenantData => {
-//         if (!dbTenantData) {
-//             res.status(400).json({ message: 'No user with that email address!' });
-//             return;
-//         }
+// Login
+router.post('/login', (req, res) => {
+   Tenant.findOne({
+      where: {
+         email: req.body.email
+      }
+   }).then(dbTenantData => {
+      if (!dbTenantData) {
+         res.status(400).json({ message: 'No user with that email address!' });
+         return;
+      }
 
-//         const validPassword = dbTenantData.checkPassword(req.body.password);
+      const validPassword = dbTenantData.checkPassword(req.body.password);
 
-//         if (!validPassword) {
-//             res.status(400).json({ message: 'Incorrect password!' });
-//             return;
-//         }
+      if (!validPassword) {
+         res.status(400).json({ message: 'Incorrect password!' });
+         return;
+      }
 
-//         req.session.save(() => {
-//             req.session.tenant_id = dbTenantData.id;
-//             req.session.username = dbTenantData.username;
-//             req.session.loggedIn = true;
+      req.session.save(() => {
+         req.session.tenant_id = dbTenantData.id;
+         req.session.username = dbTenantData.username;
+         req.session.loggedIn = true;
 
-//             res.json({ tenant: dbTenantData, message: 'You are now logged in!' });
-//         });
-//     });
-// });
+         res.json({ tenant: dbTenantData, message: 'You are now logged in!' });
+      });
+   });
+});
 
-// // Logout
-// router.post('/logout', (req, res) => {
-//     if (req.session.loggedIn) {
-//         req.session.destroy(() => {
-//             res.status(204).end();
-//         });
-//     }
-//     else {
-//         res.status(404).end();
-//     }
-// });
+// Logout
+router.post('/logout', (req, res) => {
+   if (req.session.loggedIn) {
+      req.session.destroy(() => {
+         res.status(204).end();
+      });
+   }
+   else {
+      res.status(404).end();
+   }
+});
 
 router.put('/:id', (req, res) => {
    Tenant.update(req.body, {
