@@ -149,3 +149,53 @@ nav {
 .button1:hover {
    background-color: var(--third-color);
 }
+
+/* /* Property page styles */
+.container-top {
+   background-color:(var(--main-color));
+}
+.background-property {
+   background-color: var(--main-color);
+   height: 200px;
+ 
+}
+.search-button-prop {
+   justify-content: center;
+   align-items: center;
+
+}
+.input1 {
+   width: 500px;
+   height: 50px;
+   margin-top: 60px;
+   margin-left: 200px;
+   border: solid;
+   border-color: var(--fourth-color);
+   border-radius:10px;
+   outline: none;
+   color:var(--main-color);
+   font-size: 2vh;
+}
+.propSearchBtn {
+   background-color: var(--fourth-color);
+   height:50px;
+   width: 100px;
+   border: solid;
+   border-color: var(--third-color);
+   border-radius: 10px;
+   color: var(--main-color);
+   text-align: center;
+   font-size: 2vh;
+}
+.propSearchBtn input {
+   background-color: rgba(0, 0, 0, 0);
+   border-radius: 5px;
+}
+
+.propSearchBtn input:focus:focus {
+   background-color: var(--third-color);
+   outline: none;
+}
+.propSearchBtn:hover {
+   background-color: var(--secondary-color);
+}
