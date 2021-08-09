@@ -37,13 +37,13 @@
                   <div>
                      <div>
                         <ul>
-                           {{#if loggedIn}}
-                           <li> <button id="logout">Logout</button></li>
-                           {{else}}
+                           {{!-- {{#if loggedIn}} --}}
+                           <li> <a href="/" id="logout">Logout</a></li>
+                           {{!-- {{else}} --}}
                            <li> <a href="/login">Tenant Login</a></li>
-                           {{/if}}
                            <li> <a href="#">About</a></li>
                            <li> <a href="#">Contact</a></li>
+                           {{!-- {{/if}} --}}
                         </ul>
                      </div>
                   </div>
@@ -58,15 +58,12 @@
       crossorigin="anonymous" referrerpolicy="no-referrer"></script>
    <script type="text/javascript" src="/javascript/script.js"></script>
    <script src="/javascript/search-prop.js"></script>
-<<<<<<< HEAD
 
-   {{#if loggedIn}}
+   {{!-- {{#if loggedIn}} --}}
    <script src="/javascript/logout.js"></script>
-   {{/if}}
+   {{!-- {{/if}} --}}
    
-=======
    <script src="/javascript/search-landlord.js"></script>
->>>>>>> 41e7089c5a9751f0be74185acd04056b1bc8e7e7
 </body>
 
 </html>
