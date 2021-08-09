@@ -1,5 +1,5 @@
 const landlordBtn = document.querySelector('.landlordBtn')
-
+console.log("I am here");
 async function newlandlordSearch() {
 
    const response = await fetch(`/api/landlords`, {
