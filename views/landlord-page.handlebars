@@ -1,14 +1,13 @@
 <form class="search-button">
    <input type="text" placeholder="Property Address" name="search">
    <button class="propSearchBtn" type="submit">Search</button>
-   <button class="propAddBtn" type="submit">Add Property</button>
 </form>
 
 <section>
    <ol>
-      {{#each properties}}
+      {{#each landlords}}
       <li>
-         {{> prop-info}}
+         {{> landlord-info}}
          {{!-- {{MOST RECENT COMMENT}} --}}
          {{!-- {{> comment}} --}}
       </li>
