@@ -97,7 +97,7 @@ nav {
    transform: translate(-50%, -30%);
    font-size: 8rem;
    font-family: 'Cabin Sketch', cursive;
-   color: var(--main-color);
+   color:black;
 }
 
 .big-text2 {
@@ -150,7 +150,7 @@ nav {
    background-color: var(--third-color);
 }
 
-/* /* Property page styles */
+/* /* Property and Landlord page styles */
 .container-top {
    background-color:(var(--main-color));
 }
@@ -198,4 +198,92 @@ nav {
 }
 .propSearchBtn:hover {
    background-color: var(--secondary-color);
+}
+.addPropBtn {
+   background-color: var(--fourth-color);
+   height:50px;
+   width: 300px;
+   border: solid;
+   border-color: var(--third-color);
+   border-radius: 10px;
+   color: var(--main-color);
+   text-align: center;
+   font-size: 2vh;
+}
+.addPropBtn input {
+   background-color: rgba(0, 0, 0, 0);
+   border-radius: 5px;
+}
+
+.addPropBtn input:focus:focus {
+   background-color: var(--third-color);
+   outline: none;
+}
+.addPropBtn:hover {
+   background-color: var(--secondary-color);
+}
+/* Login and Sign up Forms */
+.loging-box {
+   margin-top: 100px;
+   margin-left: 250px;
+   background-color:var(--main-color);
+   border-radius: 10px;
+   height: 600px;
+   
+}
+.signup-box {
+   margin-top: 100px;
+   margin-left: 50px;
+   margin-right: 250px;
+   border-radius: 10px;
+   background-color:var(--third-color);
+   height: 600px;
+}
+.login-form {
+   margin-top: 50px;
+   align-items: center;
+   font-size: 2vh;
+   text-align: center;
+   
+}
+.login-form input {
+   border-radius: 5px;
+   border: none;
+}
+.login-form label {
+   letter-spacing: 5px;
+   color: white;
+}
+.login-form button{
+   border-radius: 5px;
+   border: none;
+   background-color: var(--secondary-color);
+   color: black;
+   width: 100px;
+}
+
+.signup-form {
+   margin-top: 50px;
+   align-items: center;
+   font-size: 2vh;
+   text-align: center;
+}
+.signup-form input {
+   border-radius: 5px;
+   border: none;
+}
+.signup-form label {
+   letter-spacing: 5px;
+}
+.signup-form button{
+   border-radius: 5px;
+   border: none;
+   background-color: var(--main-color);
+   color: white;
+   width: 100px;
+}
+/* prop-info */
+.property {
+   color: black;
+   font-size: 3vh;
 }
