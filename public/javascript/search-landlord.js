@@ -1,4 +1,4 @@
-const landlordBtn = document.querySelector('.landlordBtn')
+const landlordBtn = document.querySelector('#landlordBtn')
 
 async function newlandlordSearch() {
 
